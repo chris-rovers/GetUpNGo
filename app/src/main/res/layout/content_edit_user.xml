@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".EditUserActivity"
+    tools:showIn="@layout/activity_edit_user">
+
+    <LinearLayout
+        android:id="@+id/edit_user_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/school_icons">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransparentWhite"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edit_user_textview_marginStart"
+                    android:layout_marginTop="@dimen/edit_user_textview_marginTop"
+                    android:text="@string/edit_title"
+                    android:textFontWeight="900"
+                    android:textSize="@dimen/edit_user_textview_textSize"></TextView>
+            </LinearLayout>
+            <!-- DETAILS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- NAME -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="@dimen/user_detail_field_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/user_detail_field_marginStart"
+                        android:text="@string/name_title"></TextView>
+                    <EditText
+                        android:id="@+id/edit_name_text"
+                        android:layout_width="@dimen/user_detail_editext_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/user_detail_editext_marginEnd"></EditText>
+                </LinearLayout>
+                <!-- AGE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="@dimen/user_detail_field_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/user_detail_field_marginStart"
+                        android:text="@string/age_title"></TextView>
+                    <EditText
+                        android:id="@+id/age_text"
+                        android:layout_width="@dimen/user_detail_editext_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/user_detail_editext_marginEnd"></EditText>
+                </LinearLayout>
+                <!-- GRADE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="@dimen/user_detail_field_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/user_detail_field_marginStart"
+                        android:text="@string/grade_title"></TextView>
+                    <EditText
+                        android:id="@+id/grade_text"
+                        android:layout_width="@dimen/user_detail_editext_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/user_detail_editext_marginEnd"></EditText>
+                </LinearLayout>
+                <!-- TEACHER -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="@dimen/user_detail_field_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/user_detail_field_marginStart"
+                        android:text="@string/teacher_title"></TextView>
+                    <EditText
+                        android:id="@+id/teacher_text"
+                        android:layout_width="@dimen/user_detail_editext_width"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/user_detail_editext_marginEnd"></EditText>
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- SAVE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/save_user_area_height"
+                android:layout_marginTop="@dimen/save_user_area_marginTop"
+                android:orientation="vertical">
+                <CheckBox
+                    android:id="@+id/user_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/archived_checkbox_marginEnd"
+                    android:text="@string/archive_user"></CheckBox>
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/save_button_marginEnd"
+                    android:textSize="@dimen/save_button_textSize"
+                    android:onClick="updateUser"
+                    android:text="@string/save_user"></Button>
+            </LinearLayout>
+            <!-- DONE -->
+            <Button
+                android:id="@+id/done_button"
+                android:layout_width="@dimen/done_button_width"
+                android:layout_height="@dimen/done_button_height"
+                android:layout_gravity="bottom|center_horizontal"
+                android:textAlignment="center"
+                android:textSize="@dimen/done_button_textSize"
+                android:text="@string/done"></Button>
+                <!-- DELETE -->
+            <Button
+                android:id="@+id/delete_button"
+                android:layout_width="@dimen/delete_button_width"
+                android:layout_height="@dimen/delete_button_height"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="@dimen/delete_button_marginTop"
+                android:onClick="deleteUser"
+                android:text="@string/delete"
+                android:textAlignment="center"
+                android:backgroundTint="@color/colorRed"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/delete_button_textSize"></Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
